@@ -1,0 +1,27 @@
+{
+  "name": "gitlab-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for GitLab REST API (projects, merge requests, pipelines)",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/src/index.js",
+    "check": "tsc && node dist/tests/check-connection.js",
+    "inspector": "npm run build && npx @modelcontextprotocol/inspector node dist/src/index.js",
+    "trigger-and-play": "tsc && node dist/tests/run-trigger-and-play.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
